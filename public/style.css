@@ -20,6 +20,11 @@ tbody{
   flex-direction: column;
   overflow: auto;
   height: 500px;
+  margin: 0 0.5rem 1rem 0.5rem;
+}
+
+thead {
+  margin: 0 0.5rem 0 0.5rem;
 }
 
 tr {

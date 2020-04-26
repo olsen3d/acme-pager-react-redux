@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
 import { getEmployees } from './store'
 
-export default function EmployeeTable() {
+export default function Test() {
   const employees = useSelector(state => state)
   const dispatch = useDispatch()
   let { page } = useParams()
