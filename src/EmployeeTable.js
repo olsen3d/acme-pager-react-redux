@@ -9,7 +9,7 @@ export default function EmployeeTable() {
   let { page } = useParams()
 
   useEffect(() => {
-    dispatch(getEmployees(page || 1))
+    dispatch(getEmployees(page - 1 || 0))
   }, [page])
 
   if (employees.length === 0) return <h1>Loading...</h1>

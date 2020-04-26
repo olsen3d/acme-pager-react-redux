@@ -8,8 +8,8 @@ export default function App() {
     <HashRouter>
       <h1>Acme Pager</h1>
       <Route exact path="/" ><Redirect to="/1" /></Route>
-      <Route path="/:page?" render={() => <EmployeeTable /> } />
       <Route path="/:page?" render={() => <Navbar /> } />
+      <Route path="/:page?" render={() => <EmployeeTable /> } />
     </HashRouter>
   )
 }

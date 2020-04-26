@@ -7,13 +7,17 @@ export default function Navbar() {
   const count = useSelector(state => state.count)
   const dispatch = useDispatch()
   const { page } = useParams()
+  const pages = count ? new Array(Math.ceil(count / 50)).fill(0).map((_, i) => i + 1) : []
+  const employeeCountStart = ((page - 1) * 50) + 1
+  let employeeCountEnd = ((page - 1) * 50) + 50
+  employeeCountEnd = employeeCountEnd > count ? count : employeeCountEnd
 
   useEffect(() => {
     dispatch(getCount())
   }, 0)
 
-  const pages = count ? new Array(Math.floor(count / 50)).fill(0).map((_, i) => i + 1) : []
   return (
+    <div id="container">
     <nav>
       <span>
         <Link to={page * 1 <= pages[0] ? `${page}` : `${page * 1 - 1}`}>Prev</Link>
@@ -31,5 +35,7 @@ export default function Navbar() {
         <Link to={page * 1 >= pages[pages.length - 1] ? `${page}` : `${page * 1 + 1}`}>Next</Link>
       </span>
     </nav>
-      )
-    }
+    <span>showing employes {employeeCountStart} - {employeeCountEnd}</span>
+    </div>
+    )
+  }
