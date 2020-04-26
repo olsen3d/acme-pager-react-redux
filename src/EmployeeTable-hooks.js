@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react'
-import { useParams } from 'react-router-dom'
+import React, { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
+import { useParams } from 'react-router-dom'
 import { getEmployees } from './store'
 
 export default function EmployeeTable() {
@@ -30,10 +30,10 @@ export default function EmployeeTable() {
         employees.map( employee => {
           return (
             <tr key={employee.id} >
-              <td>{employee.firstName}</td>
-              <td>{employee.lastName}</td>
-              <td>{employee.email}</td>
-              <td>{employee.title}</td>
+            <td>{employee.firstName}</td>
+            <td>{employee.lastName}</td>
+            <td>{employee.email}</td>
+            <td>{employee.title}</td>
             </tr>
             )
           })
@@ -42,4 +42,4 @@ export default function EmployeeTable() {
       </table>
     </div>
       )
-}
+    }

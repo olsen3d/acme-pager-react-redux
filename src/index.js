@@ -5,5 +5,4 @@ import App from './app'
 import store from './store'
 
 const rootEl = document.querySelector('#root');
-
 ReactDOM.render(<Provider store={store}><App /></Provider>, rootEl);
