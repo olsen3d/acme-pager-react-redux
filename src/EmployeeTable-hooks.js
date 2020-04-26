@@ -4,7 +4,7 @@ import { useParams } from 'react-router-dom'
 import { getEmployees } from './store'
 
 export default function EmployeeTable() {
-  const employees = useSelector(state => state)
+  const employees = useSelector(state => state.employees)
   const dispatch = useDispatch()
   let { page } = useParams()
 
