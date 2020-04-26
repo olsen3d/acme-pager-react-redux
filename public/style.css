@@ -5,10 +5,13 @@ body {
 
 table {
   border: solid 2px black;
+  border-radius: 0.5rem;
+  padding: 0.2rem;
   border-collapse: collapse;
   display: flex;
   flex-direction: column;
   width: 90%;
+  background-color: lightslategray;
   
 }
 
@@ -33,7 +36,7 @@ th,td {
 }
 
 th {
-  background-color: slategray;
+  background-color: lightslategray;
 }
 
 td {
@@ -41,20 +44,38 @@ td {
 }
 
 tr:nth-child(even) {
-  background-color: #DDDDDD;
+  background-color: white;
+}
+
+tr:nth-child(odd) {
+  background-color: lightgray;
 }
 
 nav {
-  margin: 1rem;
-  width: 400px;
+  margin: 1rem 0;
+  width: 500px;
   display: flex;
   justify-content: space-around;
 }
 
 a {
-  flex: 1;
+  text-decoration: none;
+  color: black;
+}
+
+nav>span {
+  width: 50px;
+  display: flex;
+  justify-content: center;
+  border: solid black 1px;
+  border-radius: 0.5rem;
+  background-color: lightgray;
 }
 
 .selected {
-  background-color: blueviolet;
+  background-color: lightslategray;
+}
+
+.selected>a {
+  color: white
 }

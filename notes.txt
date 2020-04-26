@@ -11,4 +11,6 @@ lastName: "Graham"
 title: "Direct Communications Executive"
 updatedAt: "2020-04-24T21:20:16.318Z"
 
-updating navbar to have route to change selected
+
+bugs
+employees tries to get with undefined

@@ -2,7 +2,7 @@ import React from 'react'
 import EmployeeTable from './EmployeeTable'
 import Navbar from './Navbar'
 import axios from 'axios'
-import { HashRouter, Route } from 'react-router-dom'
+import { HashRouter, Route, Redirect } from 'react-router-dom'
 
 class App extends React.Component {
   constructor() {
@@ -20,6 +20,7 @@ class App extends React.Component {
     return (
       <HashRouter>
         <h1>Acme Pager</h1>
+        <Route path="/" ><Redirect to="/1" /></Route>
         <Route path="/:page?" component={EmployeeTable} />
         <Route path="/:page?" render={() => <Navbar count={ count } /> } />
       </HashRouter>
