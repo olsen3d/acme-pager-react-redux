@@ -1,8 +1,17 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Link, useParams } from 'react-router-dom'
+import { useSelector, useDispatch } from 'react-redux'
+import { getCount } from './store'
 
-const Navbar = ({ count }) => {
+export default function Navbar() {
+  const count = useSelector(state => state.count)
+  const dispatch = useDispatch()
   const { page } = useParams()
+
+  useEffect(() => {
+    dispatch(getCount())
+  }, 0)
+
   const pages = count ? new Array(Math.floor(count / 50)).fill(0).map((_, i) => i + 1) : []
   return (
     <nav>
@@ -24,5 +33,3 @@ const Navbar = ({ count }) => {
     </nav>
       )
     }
-
-    export default Navbar

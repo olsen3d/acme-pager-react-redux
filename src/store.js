@@ -22,7 +22,7 @@ const getEmployees = (page) => {
 const getCount = () => {
   return async dispatch => {
     const count = (await axios.get(`/api/employees/`))
-    return dispatch(getEmployeesAction(employees.data.count))
+    return dispatch(getCountAction(count.data.count))
   }
 }
 
@@ -53,5 +53,6 @@ const store = createStore(reducer, applyMiddleware(
 
 export default store
 export {
-  getEmployees
+  getEmployees,
+  getCount
 }
