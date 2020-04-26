@@ -20,8 +20,8 @@ class App extends React.Component {
     return (
       <HashRouter>
         <h1>Acme Pager</h1>
-        <Route path="/" ><Redirect to="/1" /></Route>
-        <Route path="/:page?" component={EmployeeTable} />
+        <Route exact path="/" ><Redirect to="/1" /></Route>
+        <Route path="/:page?" render={() => <EmployeeTable /> } />
         <Route path="/:page?" render={() => <Navbar count={ count } /> } />
       </HashRouter>
     )
