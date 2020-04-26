@@ -1,0 +1,14 @@
+app
+-header
+-table container
+-nav bar
+
+createdAt: "2020-04-24T21:20:16.318Z"
+email: "Royce_Maggio@gmail.com"
+firstName: "Abdullah"
+id: 219
+lastName: "Graham"
+title: "Direct Communications Executive"
+updatedAt: "2020-04-24T21:20:16.318Z"
+
+updating navbar to have route to change selected

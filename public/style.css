@@ -1,0 +1,60 @@
+body {
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+table {
+  border: solid 2px black;
+  border-collapse: collapse;
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  
+}
+
+tbody{
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+  height: 500px;
+}
+
+tr {
+  display: flex;
+}
+
+th,td {
+  padding: 4px;
+  text-align: left;
+  width: 100px;
+  flex: 1;
+  /* border: 1px solid black; */
+  margin:0;
+}
+
+th {
+  background-color: slategray;
+}
+
+td {
+  font-size: 0.75rem;
+}
+
+tr:nth-child(even) {
+  background-color: #DDDDDD;
+}
+
+nav {
+  margin: 1rem;
+  width: 400px;
+  display: flex;
+  justify-content: space-around;
+}
+
+a {
+  flex: 1;
+}
+
+.selected {
+  background-color: blueviolet;
+}
