@@ -1,4 +1,4 @@
-/* eslint-disable react/jsx-key */
+
 import React, { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import axios from 'axios'
@@ -29,7 +29,7 @@ function EmployeeTable() {
       {
         employees.map( employee => {
           return (
-            <tr>
+            <tr key={employee.id} >
               <td>{employee.firstName}</td>
               <td>{employee.lastName}</td>
               <td>{employee.email}</td>

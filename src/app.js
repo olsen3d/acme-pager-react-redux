@@ -1,5 +1,5 @@
 import React from 'react'
-import EmployeeTable from './EmployeeTable'
+import EmployeeTable from './EmployeeTable-hooks'
 import Navbar from './Navbar'
 import axios from 'axios'
 import { HashRouter, Route, Redirect } from 'react-router-dom'
