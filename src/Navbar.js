@@ -7,6 +7,7 @@ export default function Navbar() {
   const count = useSelector(state => state.count)
   const dispatch = useDispatch()
   const { page } = useParams()
+
   const pages = count ? new Array(Math.ceil(count / 50)).fill(0).map((_, i) => i + 1) : []
   const employeeCountStart = ((page - 1) * 50) + 1
   let employeeCountEnd = ((page - 1) * 50) + 50

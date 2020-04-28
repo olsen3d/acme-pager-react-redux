@@ -6,10 +6,16 @@ const { Employee } = require('./db/index.js');
 
 app.use(express.static(path.join(__dirname, '..', 'public')));
 app.use(express.static(path.join(__dirname, '..', 'dist')));
+app.use(express.json())
 
 app.get('/', (req, res, next) => {
   res.sendFile(path.join(__dirname, '..', 'public', 'index.html'));
 });
+
+app.post('/api/employees/', (req, res, next) => {
+  Employee.create(req.body)
+  .then( employee => res.send(employee))
+})
 
 const paginate = (pageNum, pageSize) => {
   return { limit: pageSize, offset: pageNum * pageSize };

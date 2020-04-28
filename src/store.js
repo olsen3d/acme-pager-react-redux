@@ -5,10 +5,12 @@ import axios from 'axios'
 
 //constant
 const GET_EMPLOYEES = 'GET_EMPLOYEES'
+const CREATE_EMPLOYEE = 'CREATE_EMPLOYEE'
 const GET_COUNT = 'GET_COUNT'
 
 //action creator
 const getEmployeesAction = employees => ({ type: GET_EMPLOYEES, employees })
+const createEmployeeAction = employee => ({ type: CREATE_EMPLOYEE, employee })
 const getCountAction = count => ({ type: GET_COUNT, count })
 
 //thunk
@@ -19,6 +21,13 @@ const getEmployees = (page) => {
   }
 }
 
+const createEmployee = (employee) => {
+  return async dispatch => {
+    const newEmployee = (await axios.post('/api/employees/', employee))
+    return dispatch(createEmployeeAction(newEmployee.data))
+  }
+}
+
 const getCount = () => {
   return async dispatch => {
     const count = (await axios.get(`/api/employees/`))
@@ -26,10 +35,10 @@ const getCount = () => {
   }
 }
 
+//reducers
 const employeesReducer = (state = [], action) => {
-  if ( action.type === GET_EMPLOYEES) {
-    return action.employees
-  }
+  if ( action.type === GET_EMPLOYEES) return action.employees
+  if ( action.type === CREATE_EMPLOYEE) return [action.employee, ...state]
   return state
 };
 
@@ -54,5 +63,6 @@ const store = createStore(reducer, applyMiddleware(
 export default store
 export {
   getEmployees,
+  createEmployee,
   getCount
 }

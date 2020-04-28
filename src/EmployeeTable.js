@@ -17,10 +17,10 @@ export default function EmployeeTable() {
     <table>
       <thead>
         <tr>
-          <th>First Name</th>
-          <th>Last Name</th>
-          <th>Email</th>
-          <th>Title</th>
+          <th className="first">First Name</th>
+          <th className="last">Last Name</th>
+          <th className="email">Email</th>
+          <th className="title">Title</th>
         </tr>
       </thead>
     <tbody>
@@ -28,10 +28,10 @@ export default function EmployeeTable() {
       employees.map( employee => {
         return (
           <tr key={employee.id} >
-          <td>{employee.firstName}</td>
-          <td>{employee.lastName}</td>
-          <td>{employee.email}</td>
-          <td>{employee.title}</td>
+          <td className="first">{employee.firstName}</td>
+          <td className="last">{employee.lastName}</td>
+          <td className="email">{employee.email}</td>
+          <td className="title">{employee.title}</td>
           </tr>
           )
         })

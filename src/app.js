@@ -11,8 +11,8 @@ export default function App() {
       <Route exact path="/" ><Redirect to="/1" /></Route>
       <Route path="/:page?" render={() => <Navbar /> } />
       <div id="side">
-      <Entry />
-      <Route path="/:page?" render={() => <EmployeeTable /> } />
+        <Entry />
+        <Route path="/:page?" render={() => <EmployeeTable /> } />
       </div>
     </HashRouter>
   )
